@@ -1,0 +1,1351 @@
+
+
+then create the react app and after create folders 
+
+pages,components,templates
+
+
+
+
+
+after going to first some links insert in the 
+
+index.html page in new react app
+
+
+<link 
+      rel="stylesheet" 
+      type="text/css" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link 
+      rel="stylesheet" 
+      type="text/css" 
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+
+
+
+//02 .and some css code   in app.css file 
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ecommerce -project codes*/
+html,
+body {
+  font-family: 'Amazon Ember';
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+/* Scroll Bar */
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(66, 66, 66, 0.2);
+  border: 0px;
+  background-clip: padding-box;
+  border-radius: 5px;
+}
+
+nav {
+  background-color: #232f3e;
+  padding: 1rem 1rem;
+}
+
+#search_btn {
+  background-color: #febd69;
+}
+
+.input-group {
+  width: 90%;
+  margin-right: 35%;
+}
+
+#search_field {
+  height: 2.4rem;
+  padding: 1rem;
+}
+
+#login_btn,
+#view_btn {
+  background-color: #febd69;
+  padding: 0.4rem 1.8rem;
+  font-family: calibri;
+}
+
+#cart {
+  font-size: 1rem;
+  color: white;
+}
+
+#cart_count {
+  background-color: #febd69;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  color: black;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Home page */
+#products_heading {
+  margin-top: 1.8rem;
+}
+
+.card {
+  height: 100%;
+}
+
+.card-title a {
+  color: #2e2e2e;
+}
+
+.card-title a:hover {
+  color: #fa9c23;
+  text-decoration: none;
+}
+
+.card-body {
+  padding-left: 0;
+}
+
+.card-text {
+  font-size: 1.4rem;
+}
+
+#view_btn {
+  background-color: #fa9c23;
+  color: white;
+}
+
+.card-img-top {
+  width: 200px;
+  height: 150px;
+}
+
+.ratings {
+  font-size: 1.2rem;
+  color: #fdcc0d;
+}
+
+#no_of_reviews {
+  font-size: 0.85rem;
+  color: grey;
+  margin-left: 0.5rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 8rem;
+  color: grey;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Ratings */
+
+.rating-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+  color: #fdcc0d;
+}
+
+.rating-outer::before {
+  content: '\f006 \f006 \f006 \f006 \f006';
+}
+
+.rating-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.rating-inner::before {
+  content: '\f005 \f005 \f005 \f005 \f005';
+  color: #f8ce0b;
+}
+
+/* Product Details Page */
+#product_id {
+  color: grey;
+  font-size: 0.8rem;
+}
+
+#product_price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#cart_btn,
+#review_btn {
+  border-radius: 2rem;
+  background-color: #fa9c23;
+  border: none;
+  padding: 0.5rem 2rem;
+}
+
+#product_seller {
+  color: grey;
+  font-size: 0.9rem;
+}
+
+#stock_status {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-left: 0.3rem;
+}
+
+.redColor {
+  color: red;
+}
+
+.greenColor {
+  color: green;
+}
+
+#product_image {
+  margin-top: 9rem;
+}
+
+/* Loader */
+.loader {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  width: 80px;
+  height: 80px;
+  padding-left: 0;
+}
+.loader:after {
+  content: ' ';
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fa9c23;
+  border-color: #fa9c23 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cart */
+
+.cart-item {
+  margin: 1.8rem 0rem;
+  padding: 0rem 0.7rem;
+}
+
+.cart-item a {
+  color: grey;
+}
+
+#delete_cart_item {
+  color: red;
+  background: white;
+  padding: 0.3rem 0.5rem;
+  font-size: 1.1rem;
+  border: none;
+}
+
+#card_item_price {
+  color: #febd69;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+#checkout_btn,
+.review-btn {
+  background-color: #fa9c23;
+  border-color: #fa9c23;
+  margin-top: 2rem;
+  border-radius: 5rem;
+}
+
+#view_order_details {
+  background-color: #fa9c23;
+  border-color: #fa9c23;
+}
+
+#order_summary {
+  border: 1px solid #e3e3e3;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+}
+
+.order-summary-values {
+  float: right;
+  font-weight: bold;
+}
+
+.stockCounter input {
+  border: none;
+  width: 3rem;
+  text-align: center;
+}
+
+.plus,
+.minus {
+  padding: 0.1rem 0.5rem;
+}
+
+.stockCounter input::-webkit-outer-spin-button,
+.stockCounter input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: white;
+}
+
+/* Login & Register */
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+
+  font-weight: 700;
+}
+
+.wrapper form {
+  padding: 2.5rem 3rem;
+}
+
+.wrapper form .btn {
+  background-color: #fa9c23;
+  border-color: #fa9c23;
+  color: white;
+  margin-top: 2.5rem;
+}
+
+.wrapper form a {
+  font-size: 0.9rem;
+  color: grey;
+}
+
+/* Avatar */
+.avatar {
+  display: inline-block;
+  margin-bottom: 0;
+  height: 3rem;
+  width: 3rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+/* Header User Profile */
+
+.avatar-nav {
+  margin-right: 0.6rem;
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+/* Checkout Steps */
+
+.checkout-progress div {
+  box-sizing: border-box;
+}
+
+.checkout-progress {
+  display: block;
+  clear: both;
+  margin: 20px auto;
+  width: auto;
+  font-family: sans-serif;
+  overflow: auto;
+}
+
+.step {
+  margin: 0;
+  border: 0;
+  letter-spacing: 1px;
+  line-height: 30px;
+  padding: 5px 10px 5px 15px;
+  color: grey;
+  text-decoration: none;
+  cursor: default;
+  font-weight: bold;
+  float: left;
+  height: auto;
+}
+
+.incomplete {
+  background: #eeeeee;
+}
+
+.active-step {
+  background: #fa9c23;
+  color: #fff;
+}
+
+.triangle-active {
+  float: left;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-left: 15px solid #fa9c23;
+  border-bottom: 20px solid transparent;
+  margin-left: -1px;
+}
+
+.triangle2-active {
+  width: 0;
+  float: left;
+  border-top: 20px solid #fa9c23;
+  border-left: 15px solid #fff;
+  border-bottom: 20px solid #fa9c23;
+  margin-right: -1px;
+}
+
+.triangle-incomplete {
+  float: left;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-left: 15px solid #eeeeee;
+  border-bottom: 20px solid transparent;
+  margin-left: -1px;
+}
+
+.triangle2-incomplete {
+  width: 0;
+  float: left;
+  border-top: 20px solid #eeeeee;
+  border-left: 15px solid #fff;
+  border-bottom: 20px solid #eeeeee;
+  margin-right: -1px;
+}
+
+/* User Profile */
+
+.avatar-profile {
+  height: 16rem;
+  width: 16rem;
+}
+
+.user-info h4 {
+  font-weight: 800;
+  color: grey;
+  margin-top: 2rem;
+}
+
+.user-info p {
+  font-size: 1.1rem;
+}
+
+#edit_profile {
+  background-color: #fa9c23;
+  border-color: #fa9c23;
+}
+
+/* Confirm Order */
+
+.order-confirm p,
+.order-details p {
+  margin-left: 1.5rem;
+}
+
+.update-btn {
+  background-color: #fa9c23;
+  border-color: #fa9c23;
+  color: white;
+}
+
+.update-btn:hover {
+  color: white;
+}
+
+/* Pagination */
+.page-item.active .page-link {
+  background-color: #fa9c23;
+  border-color: #fa9c23;
+}
+
+.page-link {
+  color: #fa9c23;
+}
+
+.page-link:hover {
+  color: #fa9c23;
+}
+
+/* Admin Sidebar */
+
+.sidebar-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  min-height: 100vh;
+  font-weight: normal;
+
+  margin-top: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+#sidebar {
+  min-width: 100%;
+  max-width: 100%;
+  background: #232f3e;
+  color: #fff;
+  transition: all 0.3s;
+}
+#sidebar.active {
+  margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #232f3e;
+}
+#sidebar ul.components {
+  padding: 5px 0px;
+  border-bottom: 1px solid #232f3e;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+#sidebar ul li a:hover {
+  color: #232f3e;
+  background: #fff;
+}
+
+#sidebar ul li a i {
+  margin-right: 0.3rem;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded='true'] {
+  color: #fff;
+  background: #232f3e;
+}
+a[data-toggle='collapse'] {
+  position: relative;
+}
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+ul ul a {
+  font-size: 1rem !important;
+  padding-left: 30px !important;
+  background: #232f3e;
+}
+
+ul.CTAs {
+  padding: 20px;
+}
+
+ul.CTAs a {
+  text-align: center;
+  font-size: 0.9em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+/* Products List Admin */
+#products_table .btn {
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.4rem;
+}
+
+/* Dashboard */
+
+.card-font-size {
+  font-size: 1.5rem;
+}
+
+/* Reviews */
+
+.rating {
+  margin-top: 10rem;
+}
+
+.stars {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.star {
+  display: inline;
+  list-style: none;
+  font-size: 3rem;
+  padding-left: 0.9rem;
+  color: #e3e3e3;
+}
+
+.star:first-child {
+  padding-left: 0;
+}
+
+.orange {
+  color: #fa9c23;
+}
+
+.yellow {
+  color: #fdcc0d;
+}
+
+.review_user {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+
+
+
+//03.and the pages folder inside create the home.js file and include the code
+
+and create the code 
+
+export default function Header(){
+    return(
+        index.html body to footer all code insert
+    )
+}
+
+
+after going to app.js then 
+
+
+calling <Home/>
+
+and automatically import the header in page 
+
+
+
+then start the react app the result will be shown.
+
+
+
+
+
+
+
+
+//04 .creating headers and footers 
+
+src  folder can crete components folder inside create the header.js file and footer.js file 
+
+
+and cut the navbar and footer code to insert the 
+
+header.js file ---navbar code 
+
+footer.js--footer code 
+
+the start the react app and same outputwilldisplayed.
+
+
+
+//03..creating productcard.js file in components folder innside file.
+
+
+the home .js file can only one div class is used same as using in product.js file 
+
+
+and aftergoing to 
+
+
+calling the <product/> in Home file nd import automatically
+
+
+
+
+then this time only one product will show in the screen 
+
+
+
+remaining products will get api request 
+
+
+//05..create hom.jsfile 
+
+using react state and useeffect will calling the remaining prodcts code
+
+
+import {Fragment, useEffect, useState} from 'react'
+import ProductCard from '../components/ProductCard'
+
+export default function Home() {
+    const [products, setProducts] = useState([]);
+    
+    useEffect(() => {
+        fetch(process.env.REACT_APP_API_URL+'/products)
+        .then(res => res.json())
+        .then( res => setProducts(res.products))
+    },[])
+
+    return <Fragment>
+        <h1 id="products_heading">Latest Products</h1>
+
+        <section id="products" className="container mt-5">
+        <div className="row">
+            {products.map(product =><ProductCard product={product} />)} 
+        </div>
+        </section>
+    </Fragment>
+}
+
+
+the  explanation of code is 
+
+
+
+remining products get in the reson will use reactstate and useeffect it one of the hooks 
+
+and react folder can create the .env file and 
+
+
+
+crete the portand use this code ...
+
+
+and create react src foldername .env
+
+REACT_APP_API_URL=http://localhost:8000/api/v1
+
+this code can the port chnge time will work in the reason
+
+
+
+
+//06  next the home.js file can productmap code useafter 
+
+
+ {products.map(product =><ProductCard product={product} />)} 
+
+
+
+ going to productcard.js file 
+
+ code ...
+
+
+ note change codes 
+
+ export default function ProductCard({product}) the props produvct will import 
+
+
+
+ src={product.images[0].image} 
+ 
+ ..thesecode can every product will display different id in thunder client
+ and can change theimage reaon will use 
+
+
+
+ nextproduct rate price view details code ..
+
+ <Link to={"/product/"+product._id} >{product.name}</Link>
+
+ <div className="rating-inner" style={{width : `${product.ratings/5 * 100}%`}} ></div>  --
+
+ product ratings necessary the code used
+
+
+
+ <Link to={"/product/"+product._id} id="view_btn" className="btn btn-block">View Details</Link>
+
+ product vie will used 
+
+
+
+ and one more thingthe link will use so import 
+
+ import {Link} from 'react-router-dom'; these line and install some commands
+
+
+ npm i React-router-dom
+
+
+
+
+ total code 
+
+
+
+
+
+
+
+
+
+ import {Link} from 'react-router-dom';
+
+export default function ProductCard({product}) {
+    return <div className="col-sm-12 col-md-6 col-lg-3 my-3">
+            <div className="card p-3 rounded">
+                <img
+                className="card-img-top mx-auto"
+                src={product.images[0].image}
+                />
+                <div className="card-body d-flex flex-column">
+                <h5 className="card-title">
+                <Link to={"/product/"+product._id} >{product.name}</Link>
+                </h5>
+                <div className="ratings mt-auto">
+                    <div className="rating-outer">
+                    <div className="rating-inner" style={{width : `${product.ratings/5 * 100}%`}} ></div>
+                    </div>
+                </div>
+                <p className="card-text">${product.price}</p>
+                <Link to={"/product/"+product._id} id="view_btn" className="btn btn-block">View Details</Link>
+                </div>
+            </div>
+        </div>
+}
+
+
+
+
+after go to app.js and import react rouer codes is necessary.
+
+
+
+
+
+import './App.css';
+import Home from './pages/Home';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
+function App() {
+  
+
+  return (
+    <div className="App">
+        <Router>
+          <div>
+            
+            <Header />
+            <Routes>
+
+                <Route path="/"  element={ <Home />}/>
+               
+            </Routes>
+          </div>
+        </Router>
+      <Footer/>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+this time output will show in the browser 
+
+
+viewdetails will click go to that page and price ratings will show and product will show differnt and 
+
+names.
+
+
+
+
+//07 next product will show the page the every time will serch the product that time filtering the 
+project necessity reason wiil go to 
+
+
+
+backend contoller.js folder 
+
+and include filter code ...
+
+
+
+this code ..
+
+
+
+exports.getProducts = async (req, res, next) => {
+    const query = req.query.keyword?{ name : { 
+        $regex: req.query.keyword,
+        $options: 'i'
+     }}:{}
+    const products = await ProductModel.find(query);
+
+
+
+
+
+
+
+const ProductModel = require('../models/productModel');
+
+//Get Products API - /api/v1/products
+exports.getProducts = async (req, res, next) => {
+    const query = req.query.keyword?{ name : { 
+        $regex: req.query.keyword,
+        $options: 'i'
+     }}:{}
+    const products = await ProductModel.find(query);
+    res.json({
+        success: true,
+        products
+    })
+}
+
+//Get Single Product API - /api/v1/product/:id
+exports.getSingleProduct = async (req, res, next) => {
+    try {
+        const product = await ProductModel.findById(req.params.id);
+        res.json({
+            success: true,
+            product
+        })
+    } catch (error) {
+        res.status(404).json({
+            success: false,
+            message: 'Unable to get Product with that ID'
+        })
+    }
+}
+
+
+
+
+
+after going to fontend folder andsrc components folder can create the
+
+search.js file and include the code in the filtering code in the product purpose.
+
+code 
+
+
+search.js
+
+
+
+using Reactstste hooks navigate 
+
+
+navigate('/search?keyword='+keyword) 
+
+
+this line code willevery time search product show the 
+
+keyword in the url.
+
+
+onBlur={searchHandler}   retutn page will show different product reason will use the code .
+
+
+<button onClick={searchHandler} id="search_btn" className="btn"> this code sdearch time use
+
+
+
+
+total code ..
+
+
+
+import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+
+export default function Search() {
+    const [keyword, setKeyword]  = useState("");
+    const navigate = useNavigate();
+
+    const searchHandler = () => {
+        navigate('/search?keyword='+keyword)
+    }
+
+    return   <div className="input-group">
+                <input
+                    type="text"
+                    id="search_field"
+                    onChange={(e) => setKeyword(e.target.value)}
+                    className="form-control"
+                    onBlur={searchHandler}
+                    placeholder="Enter Product Name ..."
+                />
+                <div className="input-group-append">
+                    <button onClick={searchHandler} id="search_btn" className="btn">
+                    <i className="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+}
+
+
+
+
+
+
+creting product detail page productdetail
+
+addto cart functionality.pp.js
+
+increase and decreasecart items 
+
+creating cart page
+
+showing cart list
+
+increase and decrease item quantity
+
+remove cart item.
+
+cart summary
+
+integrating create order api.
+
+
+updating product stock.
+
+
+Get singleproduct
+
+
+
+
+these above coding work can given below:
+
+
+
+
+
+product detail.js
+
+import {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
+import {toast} from 'react-toastify';
+
+export default function ProductDetail({cartItems, setCartItems}) {
+    const [product, setProduct] = useState(null);
+    const [qty, setQty] = useState(1);
+    const {id} = useParams();
+
+    useEffect(() => {
+        fetch(process.env.REACT_APP_API_URL+'/product/'+id)
+        .then(res => res.json())
+        .then( res => setProduct(res.product))
+    },[])
+
+    function addToCart() {
+        const itemExist = cartItems.find((item) => item.product._id == product._id)
+        if (!itemExist) {
+            const newItem = {product, qty};
+            setCartItems((state) => [...state, newItem]);
+            toast.success("Cart Item added succesfully!")
+        }
+    }
+
+    function increaseQty() {
+        if (product.stock == qty) {
+            return;
+        }
+        setQty((state) => state + 1);
+    }
+
+    function decreaseQty() {
+        if (qty > 1) {
+            setQty((state) => state - 1);
+        }
+    }
+
+
+    return  product && <div className="container container-fluid">
+                <div className="row f-flex justify-content-around">
+                    <div className="col-12 col-lg-5 img-fluid" id="product_image">
+                        <img src={product.images[0].image} alt="sdf" height="500" width="500" />
+                    </div>
+
+                    <div className="col-12 col-lg-5 mt-5">
+                        <h3>{product.name}</h3>
+                        <p id="product_id">Product #{product._id}</p>
+
+                        <hr />
+
+                        <div className="rating-outer">
+                            <div className="rating-inner" style={{width : `${product.ratings/5 * 100}%`}}></div>
+                        </div>
+                
+
+                        <hr />
+
+                        <p id="product_price">${product.price}</p>
+                        <div className="stockCounter d-inline">
+                            <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
+
+                            <input type="number" className="form-control count d-inline" value={qty} readOnly />
+
+                            <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
+                        </div>
+                        <button type="button" onClick={addToCart} disabled={product.stock == 0}   id="cart_btn" className="btn btn-primary d-inline ml-4">Add to Cart</button>
+
+                        <hr />
+
+                        <p>Status: <span id="stock_status" className={product.stock > 0 ?'text-success':'text-danger'}>{product.stock > 0  ?'In Stock' : 'Out of Stock'}</span></p>
+
+                        <hr />
+
+                        <h4 className="mt-2">Description:</h4>
+                        <p>{product.description}</p>
+                        <hr />
+                        <p id="product_seller mb-3">Sold by: <strong>{product.seller}</strong></p>
+                        
+                        <div className="rating w-50"></div>
+                                
+                    </div>
+
+                </div>
+            </div>
+}
+
+
+
+
+
+
+home.js
+
+import {Fragment, useEffect, useState} from 'react'
+import ProductCard from '../components/ProductCard'
+import { useSearchParams } from 'react-router-dom';
+
+export default function Home() {
+    const [products, setProducts] = useState([]);
+    const [searchParams, setSearchParams] =  useSearchParams()
+
+    useEffect(() => {
+        fetch(process.env.REACT_APP_API_URL+'/products?'+searchParams)
+        .then(res => res.json())
+        .then( res => setProducts(res.products))
+    },[searchParams])
+
+    return <Fragment>
+        <h1 id="products_heading">Latest Products</h1>
+
+        <section id="products" className="container mt-5">
+        <div className="row">
+            {products.map(product =><ProductCard product={product} />)} 
+        </div>
+        </section>
+    </Fragment>
+}
+
+
+
+cart.js 
+
+
+import {Fragment, useState} from 'react';
+import { Link } from 'react-router-dom';
+import {toast} from 'react-toastify';
+
+export default function Cart({cartItems, setCartItems}) {
+    const [complete, setComplete] = useState(false);
+
+    function increaseQty(item) {
+        if (item.product.stock == item.qty) {
+            return;
+        }
+        const updatedItems = cartItems.map((i) => {
+            if(i.product._id == item.product._id) {
+                i.qty++
+            }
+            return i;
+        })
+        setCartItems(updatedItems)
+    }
+
+    function decreaseQty(item) {
+        if (item.qty > 1) {
+            const updatedItems = cartItems.map((i) => {
+                if(i.product._id == item.product._id) {
+                    i.qty--
+                }
+                return i;
+            })
+            setCartItems(updatedItems)
+        }
+    }
+
+    function removeItem(item) {
+        const updatedItems = cartItems.filter((i) => {
+            if(i.product._id !== item.product._id) {
+                return true;
+            }
+        })
+        setCartItems(updatedItems)
+    }
+
+    function placeOrderHandler() {
+        fetch(process.env.REACT_APP_API_URL+'/order', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(cartItems)
+        })
+        .then(() => { 
+            setCartItems([]); 
+            setComplete(true);
+            toast.success("Order Success!")
+        })
+    }
+
+
+
+    return  cartItems.length > 0 ? <Fragment>
+                <div class="container container-fluid">
+                    <h2 class="mt-5">Your Cart: <b>{cartItems.length} items</b></h2>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-12 col-lg-8">
+                            {cartItems.map((item) =>
+                            (<Fragment>
+                                <hr />
+                                <div class="cart-item">
+                                    <div class="row">
+                                        <div class="col-4 col-lg-3">
+                                            <img src={item.product.images[0].image} alt={item.product.name} height="90" width="115" />
+                                        </div>
+
+                                        <div class="col-5 col-lg-3">
+                                            <Link to={"/product/"+item.product._id} >{item.product.name}</Link>
+                                        </div>
+
+
+                                        <div class="col-4 col-lg-2 mt-4 mt-lg-0">
+                                            <p id="card_item_price">${item.product.price}</p>
+                                        </div>
+
+                                        <div class="col-4 col-lg-3 mt-4 mt-lg-0">
+                                            <div class="stockCounter d-inline">
+                                                <span class="btn btn-danger minus" onClick={() => decreaseQty(item)}>-</span>
+                                                <input type="number" class="form-control count d-inline" value={item.qty} readOnly />
+
+                                                <span class="btn btn-primary plus" onClick={() => increaseQty(item)}>+</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-4 col-lg-1 mt-4 mt-lg-0">
+                                            <i id="delete_cart_item" onClick={() => removeItem(item)} class="fa fa-trash btn btn-danger"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </Fragment>)
+                            )}
+                        
+                        </div>
+
+                        <div class="col-12 col-lg-3 my-4">
+                            <div id="order_summary">
+                                <h4>Order Summary</h4>
+                                <hr />
+                                <p>Subtotal:  <span class="order-summary-values">{cartItems.reduce((acc,item)=> (acc + item.qty), 0)} (Units)</span></p>
+                                <p>Est. total: <span class="order-summary-values">${Number(cartItems.reduce((acc,item)=> (acc + item.product.price * item.qty), 0)).toFixed(2)}</span></p>
+
+                                <hr />
+                                <button id="checkout_btn" onClick={placeOrderHandler} class="btn btn-primary btn-block">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Fragment> : (!complete ? <h2 className='mt-5'>Your Cart is Empty!</h2> 
+            : <Fragment>
+                <h2 className='mt-5'>Order Complete!</h2>
+                <p>Your order has been placed succesfully.</p>
+            </Fragment>)
+}

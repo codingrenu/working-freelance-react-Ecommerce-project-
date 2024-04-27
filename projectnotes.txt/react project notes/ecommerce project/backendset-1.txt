@@ -1,0 +1,1089 @@
+
+01 ...project build backend and install nodejs backend in the reason will
+
+
+install node mon express  ...........
+
+
+first  the project file can create and open the folder then crete the name 
+
+backend and openthe terminal 
+
+
+and some packages install 
+
+          first change the folder... cd commerce project 
+
+           install  node module manager packages in the backend folder- 
+          
+                              command --- npm init
+
+
+          crete the package.json file and one mor thing
+
+          all code rrun in app.js file backend process so refresh help use 
+
+          some packages install
+
+
+
+          command 
+
+
+        everytime cd backend inside use the commands 
+
+         npm i nodemon --
+
+         after some packages install 
+          
+          
+# then after run the app.js file  using commnd         
+          
+nodemon app.js 
+          
+          
+#paarticularly the command work or not work so this time 
+
+use the special place 
+
+
+the package.son file inside the scipt command will installnitialise the 
+
+
+start command 
+
+
+eg:
+
+
+"start:"nodemon app.js",
+
+
+after open the terminal 
+
+
+change directory
+
+
+cd backend 
+
+put the command 
+
+npm start 
+
+the nodemon app.js work will same ase runnning the project.
+
+
+the package.json code
+
+
+"scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+
+
+    this include the code 
+
+
+
+then install the another command in the projectpurpose.
+
+
+cd backend change 
+
+
+
+and put the command 
+
+
+npm i express 
+
+install the packages sucessfully installed after 
+
+
+
+showing the extra code in the package.json file
+
+
+
+
+eg:
+
+
+
+the dependencies code extra  will add.
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+
+  
+  this line
+  "dependencies": {
+    "express": "^4.18.3",
+    "nodemon": "^3.1.0"
+  }
+}
+
+......................xxxxxxxxxxxxxxxxxxxxxxxx............................
+
+
+
+
+02// the after express package install after 
+
+
+create the app.js file can 
+
+
+include the express modulation code because it to crete the port number projectpurpose
+
+
+this code :
+
+and one more thing app.js file include express module and crete express app and 
+create port number and listening purpose listen the app 
+
+using port number---8000,production ar development server so this used in production 
+
+thiscode can listed below:
+
+
+
+
+
+
+
+
+const express =require('express');
+const app =express();
+app.listen(8000,()=>{
+    console.log('server listening to port 8000 in production')
+});
+
+
+
+
+create express module and include app create app and listen purpose create 
+port number and call back .
+
+
+then the run the code .
+
+
+display the result...
+
+
+PS D:\react-ecommerce-project> cd backend
+PS D:\react-ecommerce-project\backend> npm start
+                        
+> backend@1.0.0 start
+> nodemon app.js     
+
+[nodemon] 3.1.0
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node app.js`
+server listening toport 8000 in producyion
+[nodemon] restarting due to changes...
+[nodemon] starting `node app.js`
+server listening toport 8000 in production
+[nodemon] restarting due to changes...
+[nodemon] restarting due to changes...
+[nodemon] starting `node app.js`
+server listening to port 8000 in production
+
+
+
+the port number sucessfully work..
+
+   
+
+
+...........................................................................
+
+
+
+
+
+
+02//changing environment variables so use 
+
+create the config folder inside the backend folder and install 
+
+crete folder
+
+config
+
+create file config.envi
+
+instll command 
+
+   ..npm i dotenv
+
+
+
+
+  after installing commands still tthe 
+
+
+  code implement and the code explanation
+
+  {
+    the code will use nodes js path requirement and use dirname,are used to change the env 
+    changes pupose 
+    and these code mention below...
+
+const express = require('express');
+const app = express();
+const dotenv = require('dotenv');
+const path = require('path');
+
+dotenv.config({path: path.join(__dirname, 'config', 'config.env')})
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server listening to Port ${process.env.PORT} in ${process.env.NODE_ENV}`)
+});
+
+
+}
+
+
+the code willuse to change the port number 
+
+config.env file can 
+
+
+port =3000
+node=production.
+
+save the file and 
+
+displayed the listning 3000 is work...
+
+
+....................................................................
+
+
+
+
+
+
+//03..no this time create the react routers andcontollers in th project pupose
+
+create the backend 
+
+create folder routers
+
+inside files : order.js,product.js
+
+and  backend -folder create controllers-
+inside files create 
+
+   ...order.controller.js 
+   ...product.controller.js
+
+
+
+
+therect routers and controllers code can be listed below:
+
+
+product.js
+
+
+const express = require('express');      //this is exprees module
+
+const router = express.Router();        // using rectmodule
+
+router.route('/products').get(getProducts);     // this is methods calling
+router.route('/product/:id').get(getSingleProduct);// this is methods calling and id calling
+
+module.exports = router;      // finally import the product.js
+
+
+note:
+{
+  but this can useget request and get()..not call back and use contollers 
+  router.route('/products').get(getProducts);     // this is methods calling
+  router.route('/product/:id').get(getSingleProduct)
+}
+
+
+
+
+// above same as use in oredr.js
+
+order.js
+
+
+const express = require('express');
+const router = express.Router();
+const {createOrder} = require('../controllers/orderController');
+
+router.route('/order').post(createOrder);
+
+module.exports = router;
+
+
+note:
+{
+  but this can useget request and postt()..not call back and use contollers 
+
+  router.route('/order').post(createOrder);
+}
+
+
+
+
+
+product.controller.js
+
+
+using the conrollers and order {
+ 
+
+
+  using get(). and post()
+
+  using (req, res, next)
+
+  and data can use only
+
+  json format so usethis...
+
+   res.json({
+        success: true,
+        message:'Get products working !'
+    })
+
+
+
+}
+
+
+
+exports.getProducts = (req, res, next) => {
+    
+    res.json({
+        success: true,
+        message:'Get products working !'
+    })
+}
+
+
+exports.getSingleProduct = (req, res, next) => {
+    
+        res.json({
+            success: true,
+            message:'Get single product working !'
+        })
+}
+
+
+
+
+order.controller.js
+
+
+exports.createOrder =(req, res, next) => {
+    
+
+    res.json(
+        {
+            success:true,
+            message:'order works!'
+        }
+    )
+}
+
+
+
+note..
+
+then finally create the routers and contollers because individual routerscan import easily in the purpose 
+
+will create 
+
+eg:
+order.js and product.js
+
+
+fetch api tunder client save codes  output:
+
+
+product.js...
+
+
+
+Status: 200 OK
+Size: 51 Bytes
+Time: 7 ms
+
+Response
+  
+
+
+{
+  "success": true,
+  "message": "Get products working !"
+}
+
+
+{
+  "success": true,
+  "message": "Get single product working !"
+}
+
+
+
+{
+  "success": true,
+  "message": "order works!"
+}
+
+
+
+
+
+..........................xxxxxxxxxxxxxxxxxxxxxxxx....................................
+
+
+
+
+//04..connecting database......................
+
+
+
+connecting database is necessary for this app
+
+so use the code include..
+
+{
+  using mongoose module using require and using mongoose connect method 
+
+  and the method can import the app.js code.
+
+the app.js file can display the output:
+
+mongoose connected to the localhost.
+
+          
+}
+
+
+
+const mongoose = require('mongoose');
+
+const connectDatabase = () => {
+    mongoose.connect(process.env.DB_URL).then((con) => {
+        console.log('MongoDB connected to host: '+con.connection.host)
+    })
+};
+
+module.exports = connectDatabase;
+
+
+
+app.js
+
+const connectDatabase = require('./config/connectDatabase');
+
+connectDatabase();
+
+
+
+//05...creting product module
+
+
+next ordercontoller.js file calling products in the reason so crete the backendfolder 
+
+create folder models and models folder inside create product Model.js file
+
+
+{
+  using the mongose module and it can use the new schema method to dtafiels call the 
+  products these code listed.
+}
+
+
+create the code...
+
+const mongoose = require('mongoose');
+
+const productSchema = new mongoose.Schema({
+    name: String,
+    price: String,
+    description: String,
+    ratings: String,
+    images : [
+        {
+            image: String
+        }
+    ],
+    category: String,
+    seller: String,
+    stock: String,
+    numOfReviews: String,
+    createdAt: Date
+});
+
+const productModel = mongoose.model('Product', productSchema);{
+
+  these line mongoose.model('Product', productSchema); productis a prefix creteso
+  use product another second schema so create the productschema.
+}
+
+module.exports = productModel;      ....export the moduule...
+
+
+
+..............................xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.....
+
+
+
+//06....Building get products APi..
+
+
+after product module this time use the 
+
+productcontoller.js file can use the product module import the
+
+purpose of searching the product
+
+
+code in product.controller.js.................
+
+
+
+
+const ProductModel = require('../models/productModel');  ...
+
+....productmodule can import top 
+
+
+exports.getProducts = async (req, res, next) => {
+
+
+ note: 
+ 
+  the async method is used to quickly find so use 
+   
+    const products = await ProductModel.find({});
+    
+    note :
+    and stored in empty string
+
+
+
+    res.json({
+        success: true,
+        products
+    })
+}
+
+
+
+exports.getSingleProduct = async (req, res, next) => {
+    try {
+        const product = await ProductModel.findById(req.params.id);
+        res.json({
+            success: true,
+            product
+        })
+    } 
+
+
+
+..
+
+
+note 
+
+
+after going to refresh the mongo db the mini commerce project will enabled  and same time 
+
+the products file can show empty
+
+
+
+next
+
+
+
+
+go to visual editor create the backend folder inside create the data folder and inside 
+
+create the products.json
+
+
+data code can include in the
+
+
+ products,json file 
+
+
+
+
+listed below:
+
+code...
+
+
+[{
+    "name": "OPPO F21s Pro 5G",
+    "price": 245.67,
+    "description": "OPPO F21s Pro 5G is a powerful device with a RAM extension feature, that offers brilliant operational speed to users.",
+    "ratings": 4.5,
+    "images": [
+      {
+        "image": "/images/products/1.jpg"
+      },
+      {
+        "image": "/images/products/2.jpg"
+      }
+    ],
+    "category": "Mobile Phones",
+    "seller": "Amazon",
+    "stock": 5
+  },
+  {
+    "name": "WRISTIO HD, Bluetooth Calling Smart Watch",
+    "price": 150.32,
+    "description": "Minix watches are exclusively designed to fulfill the advanced tech needs of today’s generation.",
+    "ratings": 3.5,
+    "images": [
+      {
+        "image": "/images/products/2.jpg"
+      }
+    ],
+    "category": "Accessories",
+    "seller": "Flipkart",
+    "stock": 9
+  },
+  {
+    "name": "Dell Inspiron 3511 Laptop",
+    "price": 440.57,
+    "description": "Dell Inspiron 3511 11th Generation Intel Core i5-1135G7 Processor (8MB Cache, up to 4.2 GHz);Operating System: Windows 10 Home Single Language, English",
+    "ratings": 2,
+    "images": [
+      {
+        "image": "/images/products/3.jpg"
+      }
+    ],
+    "category": "Laptops",
+    "seller": "Ebay",
+    "stock": 9
+  },
+  {
+    "name": "Lenovo IdeaPad Slim 3 Laptop",
+    "price": 250.45,
+    "description": "Lenovo IdeaPad Slim 311th Gen Intel Core i5-1135G7 | Speed: 2.4 GHz (Base) - 4.2 GHz (Max) | 4 Cores | 8 Threads | 8 MB Cache",
+    "ratings": 4,
+    "images": [
+      {
+        "image": "/images/products/6.jpg"
+      }
+    ],
+    "category": "Laptops",
+    "seller": "Ebay",
+    "stock": 9
+  },
+  {
+    "name": "ASUS VivoBook 15 Laptop",
+    "price": 767.32,
+    "description": "ASUS VivoBook 15 15.6-inch (39.62 cm) HD, Dual Core Intel Celeron N4020, Thin and Light Laptop (4GB RAM/256GB SSD/Integrated Graphics/Windows 11 Home/Transparent Silver/1.8 Kg), X515MA-BR011W",
+    "ratings": 5,
+    "images": [
+      {
+        "image": "/images/products/7.jpg"
+      }
+    ],
+    "category": "Laptops",
+    "seller": "Ebay",
+    "stock": 9
+  },
+  {
+    "name": "PTron Newly Launched Tangent Sports, 60Hrs Playtime",
+    "price": 15.46,
+    "description": "Gigantic 60 + Hours of music playtime on a single charge; BT5.2 Wireless headphones with ENC (Environmental Noise Cancellation) Technology to enhance your voice quality over the voice calls",
+    "ratings": 5,
+    "images": [
+      {
+        "image": "/images/products/4.jpg"
+      }
+    ],
+    "category": "Headphones",
+    "seller": "Amazon",
+    "stock": 4
+  },
+  {
+    "name": "Campus Men's Maxico Running Shoes",
+    "price": 10.12,
+    "description": "The high raised back cover with extra padding.",
+    "ratings": 3,
+    "images": [
+      {
+        "image": "/images/products/5.jpg"
+      }
+    ],
+    "category": "Sports",
+    "seller": "Ebay",
+    "stock": 6
+  }]
+
+
+  after going to serach the products file the datas can show in the mongo db
+
+
+  and the go to 
+
+  thunder client the data can show in the same datas in the Get products .
+  
+  and id can run in the app.js file .
+
+
+
+next...
+
+sometimes giving unknown id in thunder client.
+
+gives error this typeof error solve using try catch coding in conroller.js file 
+
+adding single product inside using try catch.
+
+
+code....
+
+
+
+//Get Single Product API - /api/v1/product/:id
+exports.getSingleProduct = async (req, res, next) => {
+    try {
+        const product = await ProductModel.findById(req.params.id);
+        res.json({
+            success: true,
+            product
+        })
+    } catch (error) {
+        res.status(404).json({
+            success: false,
+            message: 'Unable to get Product with that ID'
+        })
+    }
+}
+
+
+
+note : this try catch can display the unknown id time 
+
+oyput :
+
+thunderclient:
+
+http://localhost/api/vs/products 6273692w0910---unknown id:
+
+show: Unable to get Product with that ID
+
+
+and thunder Response 
+error 404 not found.
+
+
+
+
+
+//07: Building order api:
+
+next  create models  folder inside file can create the 
+
+ordermodels.js
+
+code:::
+
+const mongoose = require('mongoose');
+
+const orderSchema = new mongoose.Schema({
+    cartItems: Array,
+    amount: String,
+    status: String,
+    createdAt: Date
+})
+
+const orderModel = mongoose.model('Order', orderSchema);
+
+module.exports = orderModel;
+
+
+
+
+note:
+
+{same way using mongoose require module and using new schema method and the items can store inside the schema
+
+
+items will store on array,amount,status,creteddate are stored in string format. 
+
+
+
+odermodel variable can use const and same prefix use 
+
+const orderModel = mongoose.model('Order', orderSchema)
+
+and finally orderModel exports.}
+
+
+
+next create the contollers folder inside 
+
+order.controller.js file can use the code .
+
+
+
+const orderModel = require('./models/orderModel');
+exports.createOrder = async (req, res, next) => {
+
+    
+console.log(req.body,"DATA");
+
+
+... theseline can display the output in the thunder clientso use the 
+console log
+
+//ordermodel.create
+
+res.json(
+        {
+            success:true,
+            measage: "order works!"
+        }
+    )
+}
+
+
+and then import express in app.js file can thunder client cn show the result:
+
+[
+  {
+    "product":{
+  "_id": {
+    "$oid": "65f9c8144bee7857e938a3ce"
+  },
+  "name": "OPPO F21s Pro 5G",
+  "price": 245.67,
+  "description": "OPPO F21s Pro 5G is a powerful device with a RAM extension feature, that offers brilliant operational speed to users.",
+  "ratings": 4.5,
+  "images": [
+    {
+      "image": "/images/products/1.jpg"
+    },
+    {
+      "image": "/images/products/2.jpg"
+    }
+  ],
+  "category": "Mobile Phones",
+  "seller": "Amazon",
+  "stock": 5
+},
+    "qty":2
+
+
+
+
+  },
+  
+  {
+    "product":{
+  "_id": {
+    "$oid": "65f9c8144bee7857e938a3cf"
+  },
+  "name": "WRISTIO HD, Bluetooth Calling Smart Watch",
+  "price": 150.32,
+  "description": "Minix watches are exclusively designed to fulfill the advanced tech needs of today’s generation.",
+  "ratings": 3.5,
+  "images": [
+    {
+      "image": "/images/products/2.jpg"
+    }
+  ],
+  "category": "Accessories",
+  "seller": "Flipkart",
+  "stock": 9
+
+},
+    "qty":3
+  }
+
+
+
+
+]
+
+
+
+app.js
+
+
+const express = require('express');
+const app = express();
+const dotenv = require('dotenv');
+const path = require('path');
+
+const connectDatabase = require('./config/connectDatabase');
+dotenv.config({path: path.join(__dirname, 'config', 'config.env')})
+
+const products =require('./routes/product')
+const orders =require('./routes/order')
+
+connectDatabase();
+
+
+
+
+
+app.use(express.json())
+
+
+theseline express json using to show the console result in the thunder client page purpose
+ so use 
+
+
+
+
+app.use('/api/v1/',products);
+app.use('/api/v1/',orders);
+
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server listening to Port ${process.env.PORT} in ${process.env.NODE_ENV}`)
+});
+
+
+
+
+
+thethunder cient can new request
+
+code : thuderclient body include:
+
+[
+  {
+    "product":{
+  "_id": {
+    "$oid": "65f9c8144bee7857e938a3ce"
+  },
+  "name": "OPPO F21s Pro 5G",
+  "price": 245.67,
+  "description": "OPPO F21s Pro 5G is a powerful device with a RAM extension feature, that offers brilliant operational speed to users.",
+  "ratings": 4.5,
+  "images": [
+    {
+      "image": "/images/products/1.jpg"
+    },
+    {
+      "image": "/images/products/2.jpg"
+    }
+  ],
+  "category": "Mobile Phones",
+  "seller": "Amazon",
+  "stock": 5
+},
+    "qty":2
+  },
+  
+  {
+    "product":{
+  "_id": {
+    "$oid": "65f9c8144bee7857e938a3cf"
+  },
+  "name": "WRISTIO HD, Bluetooth Calling Smart Watch",
+  "price": 150.32,
+  "description": "Minix watches are exclusively designed to fulfill the advanced tech needs of today’s generation.",
+  "ratings": 3.5,
+  "images": [
+    {
+      "image": "/images/products/2.jpg"
+    }
+  ],
+  "category": "Accessories",
+  "seller": "Flipkart",
+  "stock": 9
+
+},
+    "qty":3
+  }
+]
+
+http://localhost8000/api/vs/order
+
+send 
+
+and showthe output.
+
+[
+  {
+    "product":{
+  "_id": {
+    "$oid": "65f9c8144bee7857e938a3ce"
+  },
+  "name": "OPPO F21s Pro 5G",
+  "price": 245.67,
+  "description": "OPPO F21s Pro 5G is a powerful device with a RAM extension feature, that offers brilliant operational speed to users.",
+  "ratings": 4.5,
+  "images": [
+    {
+      "image": "/images/products/1.jpg"
+    },
+    {
+      "image": "/images/products/2.jpg"
+    }
+  ],
+  "category": "Mobile Phones",
+  "seller": "Amazon",
+  "stock": 5
+},
+    "qty":2
+  },
+  
+  {
+    "product":{
+  "_id": {
+    "$oid": "65f9c8144bee7857e938a3cf"
+  },
+  "name": "WRISTIO HD, Bluetooth Calling Smart Watch",
+  "price": 150.32,
+  "description": "Minix watches are exclusively designed to fulfill the advanced tech needs of today’s generation.",
+  "ratings": 3.5,
+  "images": [
+    {
+      "image": "/images/products/2.jpg"
+    }
+  ],
+  "category": "Accessories",
+  "seller": "Flipkart",
+  "stock": 9
+
+},
+    "qty":3
+  }
+
+  
+]
+
+
+
+//10 the process after refresh the mongo db get the the new file name name 
+showed order then backend work is 90%of work completely.
+
+
+
